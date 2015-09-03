@@ -25,13 +25,16 @@ public class Fibo {
             pw.println("java -jar fibo.jar <первое число> <второе число> <длина последовательности>");
             pw.println("Пример запуска:");
             pw.println("java -jar fibo.jar 0 1 10");
+            pw.println("Запуск без параметров - вызов данной справки.");
+            pw.println("In Windows console change codepage to 1251 with command: chcp 1251");
         } else {
 
             x = Integer.parseInt(args[0]);
             y = Integer.parseInt(args[1]);
             N = Integer.parseInt(args[2]);
-
-            for (i = 1; i < N; i++) {
+            pw.format("       F = %d\r\n", x);
+            pw.format("       F = %d\r\n", y);
+            for (i = 1; i <= N; i++) {
                 if (x <= y) {
                     x = x + y;
                     pw.format("i = %d; F = %d\r\n", i, x);
