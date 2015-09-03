@@ -18,24 +18,26 @@ public class Fibo {
      */
     public static void main(String[] args) {
         PrintWriter pw = new PrintWriter(System.out, true);
-//        pw.format("Количество аргументов: %s\n", args.length);
 
-        float x = 0, y = 1;
-        int N = 10, i = 1;
+        int N = 10, i = 1, x = 0, y = 1;
         if (args.length == 0) {
             pw.println("Справка по командам.");
             pw.println("java -jar fibo.jar <первое число> <второе число> <длина последовательности>");
             pw.println("Пример запуска:");
             pw.println("java -jar fibo.jar 0 1 10");
         } else {
+
+            x = Integer.parseInt(args[0]);
+            y = Integer.parseInt(args[1]);
+            N = Integer.parseInt(args[2]);
+
             for (i = 1; i < N; i++) {
                 if (x <= y) {
                     x = x + y;
-                    pw.println(x);
-
+                    pw.format("i = %d; F = %d\r\n", i, x);
                 } else {
                     y = x + y;
-                    pw.println(y);
+                    pw.format("i = %d; F = %d\r\n", i, y);
                 }
             }
         }
